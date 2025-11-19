@@ -4,7 +4,7 @@ window.SITE_CONTENT = {
     name: "Big Black Box",
     kicker: "Punk rock from Bogotá, Colombia",
     tagline:
-      "Distorted riffs, raw protest and urban stories. Big Black Box (B3) turns social critique into loud, unapologetic songs.",
+      "We are an alternative punk rock band whose sound combines raw distortion, contextual storytelling, and a strong social conscience. Our sound is characterized by versatile punk with hints of metal, hardcore, and urban rock.",
     metaPills: [
       "Last Update • Rocky Bar Nov 7th",
       "Upcoming Release · January 2026",
