@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Big Black Box | Punk Rock from Bogotá</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Big Black Box (B3) – punk rock from Bogotá, Colombia. Distorted riffs, social critique and raw energy on stage."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #050506;
+      --bg-alt: #111216;
+      --accent: #ff4b1f;
+      --accent-soft: #ff7a3b;
+      --text: #f5f5f5;
+      --muted: #9a9a9a;
+      --card: #15171d;
+      --border: #242633;
+      --radius-lg: 18px;
+      --radius-pill: 999px;
+      --shadow-soft: 0 24px 60px rgba(0,0,0,0.7);
+      --transition-fast: 0.2s ease-out;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: radial-gradient(circle at top, #171923 0, #050506 52%);
+      color: var(--text);
+      font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .visually-hidden {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+
+    .container { width: min(1120px, 100% - 32px); margin: 0 auto; }
+
+    section { padding: 80px 0; }
+    @media (min-width: 900px) { section { padding: 110px 0; } }
+
+    .section-title {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.9rem;
+      color: var(--accent-soft);
+      margin-bottom: 8px;
+    }
+
+    .section-heading {
+      font-family: 'Anton', system-ui;
+      font-size: clamp(2.1rem, 3vw, 2.6rem);
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+
+    .section-sub {
+      color: var(--muted);
+      max-width: 540px;
+      font-size: 0.98rem;
+    }
+
+    /* NAVBAR */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(to bottom, rgba(5,5,6,0.94), rgba(5,5,6,0.78));
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+      gap: 16px;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-logo-box { height: 46px; width: auto; object-fit: contain; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      text-transform: uppercase;
+      font-size: 0.76rem;
+      letter-spacing: 0.18em;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .nav-links a {
+      position: relative;
+      color: var(--muted);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width var(--transition-fast);
+    }
+
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta {
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255,255,255,0.22);
+      padding: 8px 16px;
+      font-size: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      background: radial-gradient(circle at top left, rgba(255,75,31,0.28), transparent 55%);
+      white-space: nowrap;
+    }
+
+    .nav-cta span { font-size: 1rem; }
+
+    @media (max-width: 800px) {
+      .nav { flex-wrap: wrap; justify-content: center; }
+      .nav-cta { order: 3; }
+    }
+
+    /* HERO */
+
+    .hero {
+      padding-top: 40px;
+      padding-bottom: 80px;
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 40px;
+    }
+
+    @media (min-width: 900px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1.22fr) minmax(0, 1.1fr);
+        align-items: center;
+      }
+    }
+
+    .hero-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 0.8rem;
+      color: var(--accent-soft);
+      margin-bottom: 10px;
+    }
+
+    .hero-logo-band { max-width: 460px; margin-bottom: 16px; }
+
+    .hero-tagline {
+      color: var(--muted);
+      max-width: 520px;
+      font-size: 0.96rem;
+      margin-bottom: 22px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .pill {
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255,255,255,0.16);
+      padding: 6px 14px;
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(21,23,29,0.92);
+      backdrop-filter: blur(12px);
+    }
+
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    .btn-primary,
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: var(--radius-pill);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+        background var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #ff8d3c);
+      color: #050506;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.9);
+    }
+
+    .btn-ghost {
+      border-color: rgba(255,255,255,0.2);
+      color: var(--text);
+      background: rgba(17,18,22,0.7);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(17,18,22,0.95);
+      transform: translateY(-2px);
+    }
+
+    .btn-icon { font-size: 1.1rem; }
+
+    .hero-right { position: relative; }
+
+    .hero-photo-card {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: 0 26px 60px rgba(0,0,0,0.9);
+      background: #050506;
+    }
+
+    .hero-photo-card img { width: 100%; height: auto; }
+
+    .hero-photo-caption {
+      padding: 10px 14px 12px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      background: rgba(5,5,6,0.96);
+    }
+
+    @media (max-width: 900px) {
+      .hero { padding-top: 16px; }
+    }
+
+    /* SOCIAL + RESOURCES */
+
+    .social-strip {
+      margin-top: 26px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .social-strip-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .social-pill {
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255,255,255,0.14);
+      padding: 6px 12px;
+      font-size: 0.78rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(10,10,12,0.9);
+      cursor: pointer;
+    }
+
+    .social-pill span { font-size: 0.95rem; }
+    .social-pill:hover { border-color: var(--accent-soft); color: var(--accent-soft); }
+
+    .resources-home {
+      margin-top: 26px;
+      padding: 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: radial-gradient(circle at top left, rgba(255,75,31,0.24), transparent 56%),
+        rgba(10,11,15,0.96);
+    }
+
+    .resources-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 8px;
+    }
+
+    .resources-sub {
+      font-size: 0.84rem;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .resources-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .resource-pill {
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 6px 14px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      background: rgba(5,5,6,0.98);
+    }
+
+    .resource-pill:hover { border-color: var(--accent-soft); color: var(--accent-soft); }
+
+    /* DISCOGRAPHY */
+
+    .discography-grid {
+      margin-top: 36px;
+      display: grid;
+      gap: 22px;
+    }
+
+    @media (min-width: 800px) {
+      .discography-grid {
+        grid-template-columns: 1.2fr 1fr;
+        align-items: flex-start;
+      }
+    }
+
+    .release-list { display: grid; gap: 18px; }
+
+    .release-card {
+      display: grid;
+      grid-template-columns: 92px minmax(0, 1fr);
+      gap: 16px;
+      padding: 14px;
+      border-radius: var(--radius-lg);
+      background: rgba(10,11,16,0.9);
+      border: 1px solid var(--border);
+      transition: transform 0.15s ease-out, border-color 0.15s ease-out, box-shadow 0.15s ease-out;
+    }
+
+    .release-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255,75,31,0.6);
+      box-shadow: 0 18px 36px rgba(0,0,0,0.8);
+    }
+
+    .release-meta { display: flex; flex-direction: column; gap: 4px; }
+
+    .release-type {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent-soft);
+    }
+
+    .release-title { font-weight: 700; font-size: 1rem; }
+    .release-year { font-size: 0.8rem; color: var(--muted); }
+    .release-desc { font-size: 0.85rem; color: var(--muted); }
+
+    .release-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+      font-size: 0.78rem;
+    }
+
+    .tag-link {
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 4px 10px;
+      color: var(--muted);
+    }
+
+    .tag-link:hover { border-color: var(--accent-soft); color: var(--accent-soft); }
+
+    .discography-player {
+      background: radial-gradient(circle at top left, rgba(255,75,31,0.35), transparent 60%),
+        #05060a;
+      border-radius: 22px;
+      padding: 18px 18px 20px;
+      border: 1px solid rgba(255,255,255,0.16);
+      box-shadow: 0 26px 50px rgba(0,0,0,0.9);
+    }
+
+    .discography-player h3 {
+      font-size: 0.85rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .discography-player-title { font-weight: 700; margin-bottom: 12px; }
+
+    .discography-player iframe {
+      width: 100%;
+      border-radius: 16px;
+      border: none;
+    }
+
+    /* GALLERY */
+
+    .gallery-grid {
+      margin-top: 38px;
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+      min-height: 180px;
+      background: radial-gradient(circle at top, #232533, #050506);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      cursor: pointer;
+      transition: transform 0.18s ease-out, box-shadow 0.18s ease-out, border-color 0.18s ease-out;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,75,31,0.7);
+      box-shadow: 0 26px 50px rgba(0,0,0,0.9);
+    }
+
+    .gallery-item-label {
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: rgba(0,0,0,0.8);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    /* Lightbox */
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.86);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s ease-out;
+      z-index: 70;
+      padding: 20px;
+    }
+
+    .lightbox.open { opacity: 1; pointer-events: auto; }
+
+    .lightbox img {
+      max-width: min(960px, 100%);
+      max-height: 90vh;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.3);
+      box-shadow: 0 22px 60px rgba(0,0,0,0.9);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    /* EVENTS */
+
+    .events-layout {
+      margin-top: 34px;
+      display: grid;
+      gap: 24px;
+    }
+
+    @media (min-width: 900px) {
+      .events-layout {
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      }
+    }
+
+    .event-list { display: grid; gap: 14px; }
+
+    .event-card {
+      border-radius: var(--radius-lg);
+      background: rgba(11,12,17,0.94);
+      border: 1px solid var(--border);
+      padding: 14px 16px;
+      display: grid;
+      grid-template-columns: 94px minmax(0, 1fr);
+      gap: 16px;
+      align-items: center;
+    }
+
+    .event-date {
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.18);
+      padding: 10px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .event-date-month {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+    }
+
+    .event-date-day { font-family: 'Anton', system-ui; font-size: 1.6rem; }
+
+    .event-date-city {
+      font-size: 0.74rem;
+      letter-spacing: 0.16em;
+      margin-top: 4px;
+      color: var(--accent-soft);
+    }
+
+    .event-main-title { font-weight: 700; margin-bottom: 3px; }
+    .event-venue { font-size: 0.86rem; color: var(--muted); margin-bottom: 5px; }
+    .event-meta { font-size: 0.76rem; color: var(--muted); }
+    .event-meta strong { color: var(--text); }
+
+    /* FLYERS: imagen llena la caja, tipo cover */
+
+    .event-flyers {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin-top: 8px;
+    }
+
+    .flyer-card {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: radial-gradient(circle at top, #26283b, #050506);
+      min-height: 260px;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      padding: 0;
+      transition: transform 0.16s ease-out, box-shadow 0.16s ease-out, border-color 0.16s ease-out;
+    }
+
+    .flyer-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .flyer-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,75,31,0.7);
+      box-shadow: 0 20px 38px rgba(0,0,0,0.9);
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 36px 0 26px;
+      background: #050506;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-top: 40px;
+    }
+
+    .footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .footer-logo { height: 32px; width: auto; }
+
+    .footer-copy { font-size: 0.78rem; color: var(--muted); }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <div class="container nav">
+      <div class="nav-left">
+        <img id="navLogoBox" src="" alt="Big Black Box cube logo" class="nav-logo-box" />
+      </div>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#discography">Discography</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#events">Events</a>
+      </nav>
+      <a id="navSpotifyCta" class="nav-cta" href="#" target="_blank" rel="noopener">
+        <span>▶</span> Listen on Spotify
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HOME / HERO -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1 class="visually-hidden">Big Black Box · Punk Rock from Bogotá</h1>
+
+          <div id="heroKicker" class="hero-kicker"></div>
+
+          <!-- Logo horizontal -->
+          <img id="heroLogoBand" src="" alt="Big Black Box" class="hero-logo-band" />
+
+          <p id="heroTagline" class="hero-tagline"></p>
+
+          <div id="heroMeta" class="hero-meta"></div>
+
+          <div class="hero-actions">
+            <a class="btn-primary" href="#discography">
+              <span class="btn-icon">♪</span> Explore discography
+            </a>
+            <a class="btn-ghost" href="#events">
+              <span class="btn-icon">⚡</span> Live shows
+            </a>
+          </div>
+
+          <div class="social-strip">
+            <span>Follow B3:</span>
+            <div id="socialLinks" class="social-strip-links"></div>
+          </div>
+
+          <!-- Recursos Home -->
+          <div class="resources-home">
+            <div id="resourcesTitle" class="resources-title"></div>
+            <div id="resourcesSub" class="resources-sub"></div>
+            <div id="resourcesLinks" class="resources-links"></div>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-photo-card">
+            <img id="heroPhotoBanner" src="" alt="Big Black Box band members" />
+            <div class="hero-photo-caption" >
+              JULIAN · LUIS · JOHN · JUAN
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DISCOGRAPHY -->
+    <section id="discography">
+      <div class="container">
+        <div>
+          <div class="section-title">Discography</div>
+          <h2 id="discTitle" class="section-heading"></h2>
+          <p id="discSub" class="section-sub"></p>
+        </div>
+
+        <div class="discography-grid">
+          <div id="releaseList" class="release-list"></div>
+
+          <aside class="discography-player">
+            <h3>Listen on Spotify</h3>
+            <div id="featuredTitle" class="discography-player-title"></div>
+            <p id="featuredDesc" class="release-desc" style="margin-bottom: 12px;"></p>
+            <iframe
+              id="featuredSpotify"
+              src=""
+              height="232"
+              allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy">
+            </iframe>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery">
+      <div class="container">
+        <div>
+          <div class="section-title">Gallery</div>
+          <h2 id="galleryTitle" class="section-heading"></h2>
+          <p id="gallerySub" class="section-sub"></p>
+        </div>
+
+        <div id="galleryGrid" class="gallery-grid"></div>
+      </div>
+    </section>
+
+    <!-- EVENTS -->
+    <section id="events">
+      <div class="container">
+        <div>
+          <div class="section-title">Shows & events</div>
+          <h2 id="eventsTitle" class="section-heading"></h2>
+          <p id="eventsSub" class="section-sub"></p>
+        </div>
+
+        <div class="events-layout">
+          <div id="eventList" class="event-list"></div>
+          <div id="eventFlyers" class="event-flyers"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <img id="footerLogo" src="" alt="B3 logo" class="footer-logo" />
+          <span class="footer-copy">Big Black Box · Punk Rock Recorder</span>
+        </div>
+        <div class="footer-links">
+          <a id="footerBooking" href="#">Booking / management</a>
+          <span>·</span>
+          <a href="https://www.instagram.com/bigblackbox.band/" target="_blank" rel="noopener">Instagram</a>
+          <span>·</span>
+          <a href="https://open.spotify.com/intl-es/artist/0OxFVF9O1BNTNKf0fXvnAi" target="_blank" rel="noopener">Spotify</a>
+        </div>
+      </div>
+      <div class="footer-copy">
+        © <span id="year"></span> Big Black Box. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox">
+    <button class="lightbox-close" aria-label="Close image">&times;</button>
+    <img id="lightboxImg" alt="Gallery full view" />
+  </div>
+
+  <!-- 1) CONTENIDO -->
+  <script src="content.js"></script>
+
+  <!-- 2) LÓGICA -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const C = window.SITE_CONTENT || {};
+
+      // LOGOS + CTA
+      document.getElementById("navLogoBox").src = C.assets?.headerBoxLogo || "";
+      document.getElementById("heroLogoBand").src = C.assets?.heroLogoHorizontal || "";
+      document.getElementById("heroPhotoBanner").src = C.assets?.heroPhotoBanner || "";
+      document.getElementById("footerLogo").src = C.assets?.headerBoxLogo || "";
+
+      const spotifyUrl = (C.social || []).find(s => s.label.toLowerCase().includes("spotify"))?.url || "#";
+      document.getElementById("navSpotifyCta").href = spotifyUrl;
+
+      // HERO
+      const band = C.band || {};
+      document.getElementById("heroKicker").textContent = band.kicker || "";
+      document.getElementById("heroTagline").textContent = band.tagline || "";
+
+      const heroMeta = document.getElementById("heroMeta");
+      heroMeta.innerHTML = "";
+      (band.metaPills || []).forEach(text => {
+        const pill = document.createElement("div");
+        pill.className = "pill";
+        pill.innerHTML = '<span class="pill-dot"></span>' + text;
+        heroMeta.appendChild(pill);
+      });
+
+      // SOCIAL
+      const socialContainer = document.getElementById("socialLinks");
+      socialContainer.innerHTML = "";
+      (C.social || []).forEach(s => {
+        const a = document.createElement("a");
+        a.className = "social-pill";
+        a.href = s.url || "#";
+        a.target = "_blank";
+        a.rel = "noopener";
+        a.innerHTML = `<span>${s.icon || ""}</span> ${s.label}`;
+        socialContainer.appendChild(a);
+      });
+
+      // RESOURCES
+      const res = C.resources || {};
+      document.getElementById("resourcesTitle").textContent = res.title || "";
+      document.getElementById("resourcesSub").textContent = res.subtitle || "";
+      const resLinks = document.getElementById("resourcesLinks");
+      resLinks.innerHTML = "";
+      (res.items || []).forEach(item => {
+        const a = document.createElement("a");
+        a.className = "resource-pill";
+        a.href = item.url || "#";
+        a.target = "_blank";
+        a.rel = "noopener";
+        a.textContent = item.label;
+        resLinks.appendChild(a);
+      });
+
+      // DISCOGRAPHY
+      const disc = C.discography || {};
+      document.getElementById("discTitle").textContent = disc.introTitle || "";
+      document.getElementById("discSub").textContent = disc.introSubtitle || "";
+
+      const releaseList = document.getElementById("releaseList");
+      releaseList.innerHTML = "";
+      (disc.releases || []).forEach(r => {
+        const card = document.createElement("article");
+        card.className = "release-card";
+        card.innerHTML = `
+          <div class="release-cover">
+            <img src="${r.cover || ""}" alt="${r.title || "Release cover"}" />
+          </div>
+          <div class="release-meta">
+            <div class="release-type">${r.type || ""}</div>
+            <div class="release-title">${r.title || ""}</div>
+            <div class="release-year">${r.yearLabel || ""}</div>
+            <p class="release-desc">${r.description || ""}</p>
+            <div class="release-links">
+              ${(r.links || [])
+                .map(l =>
+                  l.url
+                    ? `<a class="tag-link" href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`
+                    : `<span class="tag-link">${l.label}</span>`
+                )
+                .join("")}
+            </div>
+          </div>
+        `;
+        releaseList.appendChild(card);
+      });
+
+      const feat = disc.featured || {};
+      document.getElementById("featuredTitle").textContent = feat.title || "";
+      document.getElementById("featuredDesc").textContent = feat.description || "";
+      document.getElementById("featuredSpotify").src = feat.spotifyEmbedUrl || "";
+
+      // GALLERY
+      const gal = C.gallery || {};
+      document.getElementById("galleryTitle").textContent = gal.introTitle || "";
+      document.getElementById("gallerySub").textContent = gal.introSubtitle || "";
+
+      const galleryGrid = document.getElementById("galleryGrid");
+      galleryGrid.innerHTML = "";
+      (gal.photos || []).forEach(p => {
+        const item = document.createElement("div");
+        item.className = "gallery-item";
+        item.innerHTML = `
+          <img src="${p.thumb}" data-full="${p.full}" alt="${p.alt || ""}" />
+          <span class="gallery-item-label">${p.label || ""}</span>
+        `;
+        galleryGrid.appendChild(item);
+      });
+
+      // EVENTS
+      const ev = C.events || {};
+      document.getElementById("eventsTitle").textContent = ev.introTitle || "";
+      document.getElementById("eventsSub").textContent = ev.introSubtitle || "";
+
+      const eventList = document.getElementById("eventList");
+      eventList.innerHTML = "";
+      (ev.list || []).forEach(e => {
+        const card = document.createElement("article");
+        card.className = "event-card";
+        card.innerHTML = `
+          <div class="event-date">
+            <div class="event-date-month">${e.month}</div>
+            <div class="event-date-day">${e.day}</div>
+            <div class="event-date-city">${e.city}</div>
+          </div>
+          <div>
+            <div class="event-main-title">${e.title}</div>
+            <div class="event-venue">${e.venue}</div>
+            <div class="event-meta">${e.meta}</div>
+          </div>
+        `;
+        eventList.appendChild(card);
+      });
+
+      const flyers = document.getElementById("eventFlyers");
+      flyers.innerHTML = "";
+      (ev.flyers || []).forEach(f => {
+        const card = document.createElement("div");
+        card.className = "flyer-card";
+        card.innerHTML = `<img src="${f.image}" data-full="${f.image}" alt="${f.alt || "Event flyer"}" />`;
+        flyers.appendChild(card);
+      });
+
+      // FOOTER
+      const footerEmail = C.footer?.bookingEmail || "booking@bigblackbox.band";
+      document.getElementById("footerBooking").href = "mailto:" + footerEmail;
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Lightbox (galería + flyers)
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightboxImg");
+
+      document.querySelectorAll(".gallery-item img, .flyer-card img").forEach(img => {
+        img.addEventListener("click", () => {
+          const fullSrc = img.dataset.full || img.src;
+          lightboxImg.src = fullSrc;
+          lightbox.classList.add("open");
+        });
+      });
+
+      lightbox.addEventListener("click", e => {
+        if (e.target === lightbox || e.target.classList.contains("lightbox-close")) {
+          lightbox.classList.remove("open");
+          lightboxImg.src = "";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
