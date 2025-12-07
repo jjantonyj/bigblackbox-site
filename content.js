@@ -219,12 +219,21 @@ window.SITE_CONTENT = {
         title: "jackAss Bar – Parche Rock",
         venue: "Normandia · Bogotá",
         meta: "Time: 8:00 PM"
+      },
+      {
+        month: "DEC",
+        day: "12",
+        city: "Bogotá",
+        title: "Lanzamiento Album Despertar – Radical Knot",
+        venue: "Cain Bar · Bogotá",
+        meta: "Time: 8:00 PM"
       }
     ],
     flyers: [
       { image: "images/FugaSonoraNov72025.jpeg", alt: "Fuga Sonora Nov 7" },
       { image: "images/KillPigsNov282025.jpeg", alt: "Kill Pigs Nov 28" },
-      { image: "images/ParcheRockDec42025.jpeg", alt: "Parche Rock Dec 4" }
+      { image: "images/ParcheRockDec42025.jpeg", alt: "Parche Rock Dec 4" },
+      { image: "images/RadicalKnotDic12.jpeg", alt: "Despertar album Dec 12" }
     ]
   },
 
