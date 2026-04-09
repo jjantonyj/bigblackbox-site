@@ -6,9 +6,9 @@ window.SITE_CONTENT = {
     tagline:
       "We are an alternative punk rock band whose sound combines raw distortion, contextual storytelling, and a strong social conscience. Our sound is characterized by versatile punk with hints of metal, hardcore, and urban rock.",
     metaPills: [
-      "Last Update • Rocky Bar Nov 7th",
-      "Upcoming Release · January 2026",
-      "Next show · A Fuego Bar · Nov 28th"
+      "Last Update • Single Release PROMETE",
+      "Upcoming Release · Apr 2026",
+      "Next show · La Mecanica · May 1st"
     ]
   },
 
@@ -72,9 +72,23 @@ window.SITE_CONTENT = {
       "Big Black Box documents critical episodes of Latin American life through distortion: corruption, repression, everyday burnout and resistance chants pressed into tape.",
     releases: [
       {
+        type: "Single · 2026",
+        title: "Promete",
+        yearLabel: "B3 Records",
+        description:
+          "Fun pogo punk. Be sure you recommend this song to your female friends",
+        cover: "images/prometeSingle.jpeg",
+        links: [
+          {
+            label: "Listen on Spotify",
+            url: "https://open.spotify.com/intl-es/track/7fA9Fc2sHaQnzxYDLz3qq8?si=e40c75cec73e4a7f"
+          }
+        ]
+      },      
+      {
         type: "Album · 2023",
         title: "Big Black Box",
-        yearLabel: "Baltika Records",
+        yearLabel: "B3 Records",
         description:
           "Full-length debut that captures protests, late-night shifts and city anxiety in 40 minutes of fast, sharp and heavy punk.",
         cover: "images/album_longplay.jpg",
@@ -88,7 +102,7 @@ window.SITE_CONTENT = {
       {
         type: "Single · 2023",
         title: "Bella Ciao",
-        yearLabel: "Baltika Records",
+        yearLabel: "B3 Records",
         description:
           "Customize a world-renowned melody to create a song for broken hearts.",
         cover: "images/ep_cover.jpg",
@@ -102,7 +116,7 @@ window.SITE_CONTENT = {
       {
         type: "Singles · 2021–2023",
         title: "Primera Línea · Señor Soborno · Silencios Forzados",
-        yearLabel: "Baltika Records",
+        yearLabel: "B3 Records",
         description:
           "Stand-alone tracks that became live anthems, shouting about corruption, enforced silence and frontline marches.",
         cover: "images/single_primera_linea.jpg",
@@ -115,11 +129,11 @@ window.SITE_CONTENT = {
       }
     ],
     featured: {
-      title: "“Batteries of flesh and blood”",
+      title: "Men promise till they get laid”",
       description:
-        "Through our lyrics we raise awareness and tell stories of everyday life.",
+        "A common story for many women around the world.",
       spotifyEmbedUrl:
-        "https://open.spotify.com/embed/track/6krzvtKwLAra0adqJk4LsZ?utm_source=generator"
+        "https://open.spotify.com/embed/track/7fA9Fc2sHaQnzxYDLz3qq8?utm_source=generator"
     }
   },
 
@@ -128,6 +142,12 @@ window.SITE_CONTENT = {
     introSubtitle:
       "Live shots, backstage noise and fragments from the rehearsal room. Click on a photo to open it full-screen.",
     photos: [
+      {
+        thumb: "images/BandaGrangeMar28.jpg",
+        full: "images/BandaGrangeMar28.jpg",
+        label: "A little tipsy - Grange Bar",
+        alt: "Band Grange"
+      },
       {
         thumb: "images/beerDic2023.jpg",
         full: "images/beerDic2023.jpg",
@@ -197,43 +217,25 @@ window.SITE_CONTENT = {
       "From DIY venues to national festivals, Big Black Box brings a visceral, no-filter live show built on sweat, feedback and collective shouting.",
     list: [
       {
-        month: "NOV",
-        day: "7",
+        month: "MAY",
+        day: "1",
         city: "Bogotá",
-        title: "Rocky Bar – Fuga Sonora",
-        venue: "Chapinero, Bogotá",
+        title: "On Session 2026 - Baltika",
+        venue: "La Mecanica",
         meta: "Time: 8:00 PM"
       },      
         {
-        month: "NOV",
+        month: "MAR",
         day: "28",
         city: "Bogotá",
-        title: "A Fuego Bar – Kill all the pigs Fest",
-        venue: "Usaquen, Bogotá",
-        meta: "Time: 7:00 PM"
-      },
-      {
-        month: "DEC",
-        day: "4",
-        city: "Bogotá",
-        title: "jackAss Bar – Parche Rock",
-        venue: "Normandia · Bogotá",
-        meta: "Time: 8:00 PM"
-      },
-      {
-        month: "DEC",
-        day: "12",
-        city: "Bogotá",
-        title: "Lanzamiento Album Despertar – Radical Knot",
-        venue: "Cain Bar · Bogotá",
-        meta: "Time: 8:00 PM"
-      }
+        title: "Postcumbia & B3",
+        venue: "The Grange Records",
+        meta: "Time: 9:00 PM"
+      }      
     ],
     flyers: [
-      { image: "images/FugaSonoraNov72025.jpeg", alt: "Fuga Sonora Nov 7" },
-      { image: "images/KillPigsNov282025.jpeg", alt: "Kill Pigs Nov 28" },
-      { image: "images/ParcheRockDec42025.jpeg", alt: "Parche Rock Dec 4" },
-      { image: "images/RadicalKnotDic12.jpeg", alt: "Despertar album Dec 12" }
+      { image: "images/Mecanica1May.png", alt: "On Session May 1" },
+      { image: "images/TheGrange28Mar.jpeg", alt: "grange Records Mar 28" }
     ]
   },
 
